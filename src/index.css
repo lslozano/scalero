@@ -8,6 +8,7 @@
 
 html, body {
   height: 100%;
+  font-family: proxima-nova, Helvetica, sans-serif;
 }
 
 body {
@@ -26,6 +27,10 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+}
+
+#root {
+  height: 100%;
 }
 
 #root, #__next {

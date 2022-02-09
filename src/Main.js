@@ -1,8 +1,10 @@
-import './App.css';
+import { MainContainer } from "./styles";
+import Navbar from './components/Navbar';
 
 const Main = () => {
   return (
-    <div className="App">
+    <MainContainer>
+      <Navbar />
       <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -16,7 +18,7 @@ const Main = () => {
           Learn React
         </a>
       </header>
-    </div>
+    </MainContainer>
   );
 }
 
