@@ -1,4 +1,4 @@
-export const videogamesData = [
+export const gamesData = [
   {
     name: "God of War",
     description: "Kratos, has travelled to the Norse land to live a mundane life. But a strange visitor sets in motion a journey of epic proportions.",
