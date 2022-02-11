@@ -2,6 +2,7 @@ import { MainContainer, GamesContainer } from './styles';
 // Components
 import Navbar from './components/Navbar';
 import GameCard from './components/GameCard';
+import Footer from './components/Footer';
 // Data
 import { gamesData } from './gamesData';
 
@@ -22,6 +23,7 @@ const Main = () => {
           )}
 
       </GamesContainer>
+      <Footer />
     </MainContainer>
   );
 }

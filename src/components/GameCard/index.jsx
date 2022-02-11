@@ -3,7 +3,11 @@ import React from 'react'
 import {
   CardContainer, CardHeader, Title, Year, CardBody,
   Description, CardMetrics, Rating, Likes, Dislikes,
+  ButtonsContainer, ButtonDetail,
 } from './styles';
+// Assets
+import like from '../../assets/like.png';
+import dislike from '../../assets/dislike.png';
 
 const GameCard = (props) => {
   const {
@@ -23,10 +27,16 @@ const GameCard = (props) => {
       </CardBody>
       <CardMetrics>
         <Rating>Rating: 0</Rating>
-        <Likes onClick={() => console.log('Clicked on like')}>Like</Likes>
-        <Dislikes onClick={() => console.log('Clicked on dislike')}>Dislike</Dislikes>
+        <ButtonsContainer>
+          <Likes onClick={() => console.log('Clicked on like')}>
+            <img src={like} alt="like-icon"/>
+          </Likes>
+          <Dislikes onClick={() => console.log('Clicked on dislike')}>
+            <img src={dislike} alt="dislike-icon" />
+          </Dislikes>
+        </ButtonsContainer>
       </CardMetrics>
-      <button>View game details</button>
+      <ButtonDetail>View game details</ButtonDetail>
     </CardContainer>
   )
 }
