@@ -1,23 +1,27 @@
-import { MainContainer } from "./styles";
+import { MainContainer, GamesContainer } from './styles';
+// Components
 import Navbar from './components/Navbar';
+import GameCard from './components/GameCard';
+// Data
+import { gamesData } from './gamesData';
 
 const Main = () => {
   return (
     <MainContainer>
       <Navbar />
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GamesContainer>
+        {gamesData.map((game, index) => {
+          const { name, description, year } = game;
+          return (
+            <GameCard
+              key={index}
+              name={name}
+              description={description}
+              year={year}
+            />)}
+          )}
+
+      </GamesContainer>
     </MainContainer>
   );
 }

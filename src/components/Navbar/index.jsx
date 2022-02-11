@@ -15,7 +15,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const handleMenuClick = () => setMenuOpen(!menuOpen);
   const menuImg = menuOpen ? closeIcon : menuIcon;
-  const renderGameOptions = game => <GameOption>{game.name}</GameOption>;
+  const renderGameOptions = (game, index) => <GameOption key={index}>{game.name}</GameOption>;
 
   return (
     <NavbarContainer>

@@ -6,6 +6,7 @@ export const NavbarContainer = styled.nav`
   height: 60px;
   display: flex;
   flex-direction: row;
+  margin: 0 -10px;
   padding: 0 10px;
   align-items: center;
   justify-content: space-between;
@@ -27,11 +28,13 @@ export const BrandTitle = styled.h1`
   margin-inline-start: 10px;
   color: #fff;
   cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.5;
 `;
 
 export const MenuIcon = styled.img`
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   filter: invert(100%);
   cursor: pointer;
 `;
@@ -43,14 +46,15 @@ export const GamesOptions = styled.div`
 `;
 
 export const GameOption = styled.div`
-  border: 2px solid #006ac9;
+  border: 1px solid #006ac9;
   border-top: none;
-  color: #000;
+  color: #fff;
   padding: 10px;
   text-align: center;
+  background-color: #006ac9;
+  cursor: pointer;
+
   :hover {
     background-image: linear-gradient(to right, #9b247f, #0076c3);
-    color: #fff;
   }
-  cursor: pointer;
 `;

@@ -5,4 +5,9 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  padding: 0 10px;
+`;
+
+export const GamesContainer = styled.div`
+  padding: 0 25px;
 `;
