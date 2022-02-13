@@ -8,12 +8,12 @@ import dislike from '../../assets/dislike.png';
 const VoteButtons = (props) => {
   const {
     voted,
-    games,
+    gamesState,
     index,
     setGames,
   } = props;
 
-  const handleVote = (gameKey, gamesState, setGamesState, vote) => {
+  const handleVote = (gameKey, gamesState, setGames, vote) => {
     const games = [...gamesState];
     const game = {
       ...games[gameKey],
@@ -22,17 +22,17 @@ const VoteButtons = (props) => {
     }
     games[gameKey] = game;
     console.log(games);
-    setGamesState(games);
+    setGames(games);
   }
 
   if (voted) return <Voted>Thanks for your vote!</Voted>
 
   return (
     <>
-    <Likes onClick={() => handleVote(index, games, setGames, 'likes')}>
+    <Likes onClick={() => handleVote(index, gamesState, setGames, 'likes')}>
       <img src={like} alt="like-icon"/>
     </Likes>
-    <Dislikes onClick={() => handleVote(index, games, setGames, 'dislikes')}>
+    <Dislikes onClick={() => handleVote(index, gamesState, setGames, 'dislikes')}>
       <img src={dislike} alt="dislike-icon" />
     </Dislikes>
     </>

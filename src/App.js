@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 // Views
 import Home from './views/Home';
+import Game from './views/Game';
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -20,6 +21,7 @@ const MainContainer = styled.div`
 `;
 
 const App = () => {
+  // Custom hook that sets global persistent state
   const [games, setGames] = useLocalStorage('gamesData', gamesData);
 
   return (
@@ -27,8 +29,8 @@ const App = () => {
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home games={games} setGames={setGames} />} />
-            <Route path="/:game" element={<p>Here goes the game info</p>} />
+            <Route path="/" element={<Home gamesState={games} setGames={setGames} />} />
+            <Route path="/:game" element={<Game gamesState={games}/>} />
           </Routes>
           <Footer />
         </Router>

@@ -9,11 +9,11 @@ const GamesContainer = styled.div`
 `;
 
 const Home = (props) => {
-  const { games, setGames } = props;
+  const { gamesState, setGames } = props;
 
   return (
     <GamesContainer>
-      {games.map((game, index) => {
+      {gamesState.map((game, index) => {
         const { name, description, voted, year } = game;
         return (
           <GameCard
@@ -23,7 +23,7 @@ const Home = (props) => {
             description={description}
             voted={voted}
             year={year}
-            games={games}
+            gamesState={gamesState}
             setGames={setGames}
           />
         )}
