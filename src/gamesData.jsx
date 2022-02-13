@@ -5,6 +5,8 @@ export const gamesData = [
     year: "2018",
     likes: 0,
     dislikes: 0,
+    rating: 0,
+    voted: false,
     reviews: [""],
   },
   {
@@ -21,6 +23,8 @@ export const gamesData = [
     year: "2011",
     likes: 0,
     dislikes: 0,
+    rating: 0,
+    voted: false,
     reviews: [""],
   },
   {
@@ -29,6 +33,8 @@ export const gamesData = [
     year: "2018",
     likes: 0,
     dislikes: 0,
+    rating: 0,
+    voted: false,
     reviews: [""],
   },
   {
@@ -37,6 +43,8 @@ export const gamesData = [
     year: "2017",
     likes: 0,
     dislikes: 0,
+    rating: 0,
+    voted: false,
     reviews: [""],
   },
   {
@@ -45,6 +53,8 @@ export const gamesData = [
     year: "2001",
     likes: 0,
     dislikes: 0,
+    rating: 0,
+    voted: false,
     reviews: [""],
   },
   {
@@ -53,6 +63,8 @@ export const gamesData = [
     year: "2021",
     likes: 0,
     dislikes: 0,
+    rating: 0,
+    voted: false,
     reviews: [""],
   },
   {
@@ -61,6 +73,8 @@ export const gamesData = [
     year: "2009",
     likes: 0,
     dislikes: 0,
+    rating: 0,
+    voted: false,
     reviews: [""],
   },
   {
@@ -69,6 +83,8 @@ export const gamesData = [
     year: "2021",
     likes: 0,
     dislikes: 0,
+    rating: 0,
+    voted: false,
     reviews: [""],
   },
   {
@@ -77,6 +93,8 @@ export const gamesData = [
     year: "2018",
     likes: 0,
     dislikes: 0,
+    rating: 0,
+    voted: false,
     reviews: [""],
   },
 ];

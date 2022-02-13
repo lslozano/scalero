@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-// Data
-import { gamesData } from '../../gamesData';
 // Components
 import GameCard from '../../components/GameCard';
 
@@ -10,17 +8,22 @@ const GamesContainer = styled.div`
   margin-block-end: 25px;
 `;
 
-const Home = () => {
+const Home = (props) => {
+  const { games, setGames } = props;
+
   return (
     <GamesContainer>
-      {gamesData.map((game, index) => {
+      {games.map((game, index) => {
         const { name, description, year } = game;
         return (
           <GameCard
             key={index}
+            index={index}
             name={name}
             description={description}
             year={year}
+            games={games}
+            setGames={setGames}
           />
         )}
       )}

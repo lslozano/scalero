@@ -6,6 +6,10 @@ import Home from './views/Home';
 // Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+// Hook
+import useLocalStorage from './Hooks/useLocalStorage';
+// Default Data
+import { gamesData } from './gamesData';
 
 const MainContainer = styled.div`
   background-color: #f4fafa;
@@ -16,12 +20,14 @@ const MainContainer = styled.div`
 `;
 
 const App = () => {
+  const [games, setGames] = useLocalStorage('gamesData', gamesData);
+
   return (
     <MainContainer>
         <Router>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home games={games} setGames={setGames} />} />
             <Route path="/:game" element={<p>Here goes the game info</p>} />
           </Routes>
           <Footer />
