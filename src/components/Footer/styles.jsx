@@ -7,7 +7,7 @@ export const FooterContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 10px 0;
-  margin-block-start: 30px;
+  margin-block-start: auto;
 `;
 
 export const Title = styled.h3`

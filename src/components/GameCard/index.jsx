@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 // Styles
 import {
   CardContainer, CardHeader, Title, Year, CardBody,
@@ -15,6 +16,8 @@ const GameCard = (props) => {
     description,
     year,
   } = props;
+
+  const gameUrl = name.replace(/ /g, '-');
 
   return (
     <CardContainer>
@@ -36,7 +39,9 @@ const GameCard = (props) => {
           </Dislikes>
         </ButtonsContainer>
       </CardMetrics>
-      <ButtonDetail>View game details</ButtonDetail>
+      <ButtonDetail>
+        <Link to={`/${gameUrl}`}>View game details</Link>
+      </ButtonDetail>
     </CardContainer>
   )
 }

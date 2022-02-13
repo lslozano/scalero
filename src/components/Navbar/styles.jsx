@@ -13,9 +13,12 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const BrandContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+  };
 `;
 
 export const BrandIcon = styled.img`
@@ -43,16 +46,21 @@ export const GamesOptions = styled.div`
   position: absolute;
   right: 0;
   top: 60px;
+  z-index: 1;
 `;
 
 export const GameOption = styled.div`
   border: 1px solid #006ac9;
   border-top: none;
-  color: #fff;
   padding: 10px;
   text-align: center;
   background-color: #006ac9;
   cursor: pointer;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  };
 
   :hover {
     background-image: linear-gradient(to right, #9b247f, #0076c3);

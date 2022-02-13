@@ -8,7 +8,7 @@ export const gamesData = [
     reviews: [""],
   },
   {
-    name: "Darksides I",
+    name: "Darksiders I",
     description: "The apocalypse started prematurely. Your mission is to unravel the mistery as to why.",
     year: "2010",
     likes: 0,

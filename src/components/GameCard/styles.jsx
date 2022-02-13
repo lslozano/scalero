@@ -87,8 +87,12 @@ export const ButtonDetail = styled.div`
     border-radius: 20px;
     border: 1px solid blue;
     background-color: blue;
-    color: white;
     font-weight: 700;
     padding: 5px 25px;
     align-self: center;
+
+    a {
+      color: white;
+      text-decoration: none;
+    };
 `;
