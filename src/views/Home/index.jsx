@@ -14,13 +14,14 @@ const Home = (props) => {
   return (
     <GamesContainer>
       {games.map((game, index) => {
-        const { name, description, year } = game;
+        const { name, description, voted, year } = game;
         return (
           <GameCard
             key={index}
             index={index}
             name={name}
             description={description}
+            voted={voted}
             year={year}
             games={games}
             setGames={setGames}
