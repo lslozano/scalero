@@ -9,7 +9,7 @@ const VoteButtons = (props) => {
   const {
     voted,
     gamesState,
-    index,
+    gameIndex,
     setGames,
   } = props;
 
@@ -23,11 +23,11 @@ const VoteButtons = (props) => {
   }
 
   // Method to handle Game vote
-  const handleVote = (gameKey, gamesState, setGames, vote) => {
+  const handleVote = (gameIndex, gamesState, setGames, vote) => {
     const games = [...gamesState];
 
     let rating;
-    const { likes, dislikes } = games[gameKey];
+    const { likes, dislikes } = games[gameIndex];
 
     if (vote === 'likes') {
       rating = calculateRating(likes + 1, dislikes);
@@ -36,13 +36,13 @@ const VoteButtons = (props) => {
     }
 
     const game = {
-      ...games[gameKey],
-      [vote]: games[gameKey][vote] + 1,
+      ...games[gameIndex],
+      [vote]: games[gameIndex][vote] + 1,
       rating,
       voted: true,
     }
 
-    games[gameKey] = game;
+    games[gameIndex] = game;
 
     setGames(games);
   }
@@ -52,10 +52,10 @@ const VoteButtons = (props) => {
 
   return (
     <>
-    <Likes onClick={() => handleVote(index, gamesState, setGames, 'likes')}>
+    <Likes onClick={() => handleVote(gameIndex, gamesState, setGames, 'likes')}>
       <img src={like} alt="like-icon"/>
     </Likes>
-    <Dislikes onClick={() => handleVote(index, gamesState, setGames, 'dislikes')}>
+    <Dislikes onClick={() => handleVote(gameIndex, gamesState, setGames, 'dislikes')}>
       <img src={dislike} alt="dislike-icon" />
     </Dislikes>
     </>

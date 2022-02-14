@@ -1,7 +1,10 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 // Components
 import VoteButtons from '../../components/VoteButtons';
+import BackHome from '../../components/BackHome';
+import AddReviewForm from '../../components/AddReviewForm';
+import Reviews from '../../components/Reviews';
 
 const Game = (props) => {
   const { gamesState, setGames } = props;
@@ -15,7 +18,7 @@ const Game = (props) => {
   if (gameInformation === undefined) {
     return (
       <>
-        <Link to="/">Back home</Link>
+        <BackHome />
         <p>Game not available in library</p>
       </>
     );
@@ -35,7 +38,7 @@ const Game = (props) => {
 
   return (
     <div>
-      <Link to="/">Back home</Link>
+      <BackHome />
       <p>{name}</p>
       <p>{year}</p>
       <p>{description}</p>
@@ -44,11 +47,12 @@ const Game = (props) => {
       <p>Rating: {rating}</p>
       <VoteButtons
         voted={voted}
-        index={indexOfSelectedGame}
+        gameIndex={indexOfSelectedGame}
         gamesState={gamesState}
         setGames={setGames}
       />
-      <p>{reviews}</p>
+      <AddReviewForm gamesState={gamesState} setGames={setGames} gameIndex={indexOfSelectedGame}/>
+      <Reviews reviews={reviews} />
     </div>
   )
 };

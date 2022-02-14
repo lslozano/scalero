@@ -36,7 +36,7 @@ const GameCard = (props) => {
         <ButtonsContainer>
           <VoteButtons
             voted={voted}
-            index={index}
+            gameIndex={index}
             gamesState={gamesState}
             setGames={setGames}
           />
