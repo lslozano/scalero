@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.div`
+export const GameDetailsContainer = styled.div`
+`;
+
+export const DetailsContainer = styled.div`
   border: 2px solid #0076c3;
   border-radius: 10px;
   display: flex;
@@ -8,13 +11,9 @@ export const CardContainer = styled.div`
   margin-block-start: 25px;
   padding: 15px;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-
-  :hover {
-    box-shadow: 10px 10px 5px #9b247f;
-  }
 `;
 
-export const CardHeader = styled.div`
+export const DetailsHeader = styled.div`
   margin-block-end: 25px;
 `;
 
@@ -25,7 +24,7 @@ export const Title = styled.p`
 
 export const Year = styled.p``;
 
-export const CardBody = styled.div`
+export const DetailsBody = styled.div`
   margin-block-end: 15px;
 `;
 
@@ -33,26 +32,11 @@ export const Description = styled.p`
   line-height: 1.5;
 `;
 
-export const CardMetrics = styled.div`
+export const MetricsContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  margin-block-end: 20px;
+  margin: 10px 0;
 `;
 
 export const Rating = styled.p``;
-
-export const ButtonDetail = styled.div`
-    border-radius: 20px;
-    border: 1px solid #0076c3;
-    background-color: #0076c3;
-    font-weight: 700;
-    padding: 5px 25px;
-    align-self: center;
-
-    a {
-      color: white;
-      text-decoration: none;
-    };
-`;

@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const ButtonsContainer = styled.div.attrs(
+  { className: 'likeDislikeButtons' }
+)`
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const Voted = styled.p`
   color: #9b247f;
 `;

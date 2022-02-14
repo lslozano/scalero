@@ -1,6 +1,6 @@
 import React from 'react';
 // Styles
-import { Likes, Dislikes } from './styles';
+import { ButtonsContainer, Likes, Dislikes } from './styles';
 // Assets
 import like from '../../assets/like.png';
 import dislike from '../../assets/dislike.png';
@@ -51,14 +51,14 @@ const VoteButtons = (props) => {
   // if (voted) return <Voted>Thanks for your vote!</Voted>
 
   return (
-    <>
+    <ButtonsContainer>
     <Likes onClick={() => handleVote(gameIndex, gamesState, setGames, 'likes')}>
       <img src={like} alt="like-icon"/>
     </Likes>
     <Dislikes onClick={() => handleVote(gameIndex, gamesState, setGames, 'dislikes')}>
       <img src={dislike} alt="dislike-icon" />
     </Dislikes>
-    </>
+    </ButtonsContainer>
   )
 };
 

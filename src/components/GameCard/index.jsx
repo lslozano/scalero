@@ -5,7 +5,7 @@ import VoteButtons from '../VoteButtons';
 // Styles
 import {
   CardContainer, CardHeader, Title, Year, CardBody,
-  Description, CardMetrics, Rating, ButtonsContainer, ButtonDetail,
+  Description, CardMetrics, Rating, ButtonDetail,
 } from './styles';
 
 const GameCard = (props) => {
@@ -33,14 +33,12 @@ const GameCard = (props) => {
       </CardBody>
       <CardMetrics>
         <Rating>Rating: {rating}</Rating>
-        <ButtonsContainer>
-          <VoteButtons
-            voted={voted}
-            gameIndex={index}
-            gamesState={gamesState}
-            setGames={setGames}
-          />
-        </ButtonsContainer>
+        <VoteButtons
+          voted={voted}
+          gameIndex={index}
+          gamesState={gamesState}
+          setGames={setGames}
+        />
       </CardMetrics>
       <ButtonDetail>
         <Link to={`/${gameUrl}`}>View game details</Link>

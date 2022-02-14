@@ -1,13 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
+// Styles
+import styled from 'styled-components';
 // Components
+import GameDetails from '../../components/GameDetails';
 import VoteButtons from '../../components/VoteButtons';
 import BackHome from '../../components/BackHome';
 import AddReviewForm from '../../components/AddReviewForm';
 import Reviews from '../../components/Reviews';
 
+const DetailsMainContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px;
+  position: relative;
+
+  a {
+    color: #0076c3;
+    text-decoration: none;
+  }
+
+  .likeDislikeButtons {
+    align-self: center;
+  }
+`;
+
+const FormButton = styled.div`
+    border-radius: 20px;
+    border: 1px solid #0076c3;
+    background-color: #0076c3;
+    font-weight: 700;
+    padding: 5px 25px;
+    align-self: center;
+    color: #fff;
+    margin: 25px 0;
+`;
+
 const Game = (props) => {
   const { gamesState, setGames } = props;
+  const [reviewFormOpen, setReviewFormOpen] = useState(false);
   const params = useParams();
   const { game } = params;
   const gameName = game.replace(/-/g, ' ');
@@ -36,24 +67,36 @@ const Game = (props) => {
     reviews,
   } = gameInformation;
 
+  const toggleReviewForm = () => setReviewFormOpen(!reviewFormOpen);
+
   return (
-    <div>
+    <DetailsMainContainer>
       <BackHome />
-      <p>{name}</p>
-      <p>{year}</p>
-      <p>{description}</p>
-      <p>Likes: {likes}</p>
-      <p>Dilikes: {dislikes}</p>
-      <p>Rating: {rating}</p>
+      <GameDetails
+        name={name}
+        year={year}
+        description={description}
+        likes={likes}
+        dislikes={dislikes}
+        rating={rating}
+      />
       <VoteButtons
         voted={voted}
         gameIndex={indexOfSelectedGame}
         gamesState={gamesState}
         setGames={setGames}
       />
-      <AddReviewForm gamesState={gamesState} setGames={setGames} gameIndex={indexOfSelectedGame}/>
+      <FormButton onClick={toggleReviewForm}>Write a review!</FormButton>
+      {reviewFormOpen &&
+        <AddReviewForm
+          gamesState={gamesState}
+          setGames={setGames}
+          gameIndex={indexOfSelectedGame}
+          closeForm={toggleReviewForm}
+        />
+      }
       <Reviews reviews={reviews} />
-    </div>
+    </DetailsMainContainer>
   )
 };
 

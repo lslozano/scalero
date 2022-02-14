@@ -15,6 +15,8 @@ export const gamesData = [
     year: "2010",
     likes: 0,
     dislikes: 0,
+    rating: 0,
+    voted: false,
     reviews: [""],
   },
   {

@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+// Styles
+import { FormContainer, Label, TextArea, SubmitInput, CancelButton } from './styles';
 
 const AddReviewForm = (props) => {
-  const { gamesState, setGames, gameIndex } = props;
+  const { gamesState, setGames, gameIndex, closeForm } = props;
   const [review, setReview] = useState('');
 
   const handleChange = event => {
@@ -10,7 +12,6 @@ const AddReviewForm = (props) => {
   }
 
   const handleSubmit = event => {
-    console.log('A new review was submitted', review);
     const games = [...gamesState];
     const { reviews } = games[gameIndex];
 
@@ -29,20 +30,22 @@ const AddReviewForm = (props) => {
 
     setGames(games);
     setReview('');
+    closeForm();
     event.preventDefault();
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Write a review:</label>
-      <textarea
+    <FormContainer onSubmit={handleSubmit}>
+      <Label>Write a review:</Label>
+      <TextArea
         type="text"
         value={review}
         onChange={handleChange}
         placeholder="Your review here"
       />
-      <input type="submit" value="Submit your review" />
-    </form>
+      <SubmitInput type="submit" value="Submit your review" disabled={!review} />
+      <CancelButton type="button" onClick={() => closeForm()}>Cancel</CancelButton>
+    </FormContainer>
   )
 }
 
