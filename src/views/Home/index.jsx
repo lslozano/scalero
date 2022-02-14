@@ -14,7 +14,7 @@ const Home = (props) => {
   return (
     <GamesContainer>
       {gamesState.map((game, index) => {
-        const { name, description, voted, year } = game;
+        const { name, description, voted, year, rating } = game;
         return (
           <GameCard
             key={index}
@@ -23,6 +23,7 @@ const Home = (props) => {
             description={description}
             voted={voted}
             year={year}
+            rating={rating}
             gamesState={gamesState}
             setGames={setGames}
           />

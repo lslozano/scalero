@@ -15,6 +15,7 @@ const GameCard = (props) => {
     description,
     voted,
     year,
+    rating,
     gamesState,
     setGames,
   } = props;
@@ -31,7 +32,7 @@ const GameCard = (props) => {
         <Description>{description}</Description>
       </CardBody>
       <CardMetrics>
-        <Rating>Rating: 0</Rating>
+        <Rating>Rating: {rating}</Rating>
         <ButtonsContainer>
           <VoteButtons
             voted={voted}
