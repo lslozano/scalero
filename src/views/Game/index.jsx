@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom';
 // Styles
 import styled from 'styled-components';
+import { breakPoints } from '../../breakPoints';
 // Components
 import GameDetails from '../../components/GameDetails';
 import VoteButtons from '../../components/VoteButtons';
@@ -14,6 +15,7 @@ const DetailsMainContainer = styled.div`
   flex-direction: column;
   padding: 20px 20px;
   position: relative;
+  width: 100%;
 
   a {
     color: #0076c3;
@@ -23,17 +25,26 @@ const DetailsMainContainer = styled.div`
   .likeDislikeButtons {
     align-self: center;
   }
+
+  ${breakPoints.largeTablet} {
+    margin: 0 auto;
+    width: 700px;
+  }
 `;
 
 const FormButton = styled.div`
-    border-radius: 20px;
-    border: 1px solid #0076c3;
-    background-color: #0076c3;
-    font-weight: 700;
-    padding: 5px 25px;
-    align-self: center;
-    color: #fff;
-    margin: 25px 0;
+  border-radius: 20px;
+  border: 1px solid #0076c3;
+  background-color: #0076c3;
+  font-weight: 700;
+  padding: 5px 25px;
+  align-self: center;
+  color: #fff;
+  margin: 25px 0;
+
+  ${breakPoints.largeTablet} {
+    font-size: 1.2rem;
+  }
 `;
 
 const Game = (props) => {

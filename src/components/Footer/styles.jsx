@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakPoints } from '../../breakPoints';
 
 export const FooterContainer = styled.div`
   background-image: linear-gradient(to right, #9b247f, #0076c3);
@@ -8,6 +9,10 @@ export const FooterContainer = styled.div`
   align-items: center;
   padding: 10px 0;
   margin-block-start: auto;
+
+  ${breakPoints.smallTablet} {
+    margin: auto -50px 0;
+  }
 `;
 
 export const Title = styled.h3`

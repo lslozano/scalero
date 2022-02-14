@@ -90,7 +90,7 @@ export const gamesData = [
     reviews: [""],
   },
   {
-    name: "Marvel's Spider-Man",
+    name: "Marvels Spider Man",
     description: "Play as Spider-Man in this new epic adventure.",
     year: "2018",
     likes: 0,

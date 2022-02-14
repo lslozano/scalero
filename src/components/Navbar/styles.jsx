@@ -1,6 +1,9 @@
 import styled from "styled-components";
+import { breakPoints } from "../../breakPoints";
 
-export const NavbarContainer = styled.nav`
+export const NavbarContainer = styled.nav.attrs({
+  className: 'navbarContainer',
+})`
   background-color: red;
   background-image: linear-gradient(to right, #9b247f, #0076c3);
   height: 60px;
@@ -10,6 +13,11 @@ export const NavbarContainer = styled.nav`
   padding: 0 10px;
   align-items: center;
   justify-content: space-between;
+
+  ${breakPoints.smallTablet} {
+    margin: 0 -50px;
+    padding: 0 50px;
+  }
 `;
 
 export const BrandContainer = styled.div`
@@ -25,6 +33,11 @@ export const BrandIcon = styled.img`
   width: 30px;
   height: 30px;
   cursor: pointer;
+
+  ${breakPoints.smallTablet} {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const BrandTitle = styled.h1`
@@ -33,6 +46,10 @@ export const BrandTitle = styled.h1`
   cursor: pointer;
   font-size: 1rem;
   line-height: 1.5;
+
+  ${breakPoints.smallTablet} {
+    font-size: 1.5rem;
+  }
 `;
 
 export const MenuIcon = styled.img`
@@ -40,6 +57,11 @@ export const MenuIcon = styled.img`
   height: 25px;
   filter: invert(100%);
   cursor: pointer;
+
+  ${breakPoints.smallTablet} {
+    width: 35px;
+    height: 35px;
+  }
 `;
 
 export const GamesOptions = styled.div`

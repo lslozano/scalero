@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakPoints} from '../../breakPoints';
 
 export const CardContainer = styled.div`
   border: 2px solid #0076c3;
@@ -23,7 +24,11 @@ export const Title = styled.p`
   font-weight: 700;
 `;
 
-export const Year = styled.p``;
+export const Year = styled.p`
+  ${breakPoints.largeTablet} {
+    font-size: 1.2rem;
+  }
+`;
 
 export const CardBody = styled.div`
   margin-block-end: 15px;
@@ -31,6 +36,14 @@ export const CardBody = styled.div`
 
 export const Description = styled.p`
   line-height: 1.5;
+
+  ${breakPoints.smallTablet} {
+    font-size: 1.1rem;
+  }
+
+  ${breakPoints.largeTablet} {
+    font-size: 1.3rem;
+  }
 `;
 
 export const CardMetrics = styled.div`
@@ -41,18 +54,32 @@ export const CardMetrics = styled.div`
   margin-block-end: 20px;
 `;
 
-export const Rating = styled.p``;
+export const Rating = styled.p`
+  ${breakPoints.smallTablet} {
+    font-size: 1.1rem;
+  }
+
+  ${breakPoints.largeTablet} {
+    font-size: 1.3rem;
+  }
+`;
 
 export const ButtonDetail = styled.div`
-    border-radius: 20px;
-    border: 1px solid #0076c3;
-    background-color: #0076c3;
-    font-weight: 700;
-    padding: 5px 25px;
-    align-self: center;
+  border-radius: 20px;
+  border: 1px solid #0076c3;
+  background-color: #0076c3;
+  font-weight: 700;
+  padding: 5px 25px;
+  align-self: center;
 
+  a {
+    color: white;
+    text-decoration: none;
+  };
+
+  ${breakPoints.largeTablet} {
     a {
-      color: white;
-      text-decoration: none;
-    };
+      font-size: 1.2rem;
+    }
+  }
 `;

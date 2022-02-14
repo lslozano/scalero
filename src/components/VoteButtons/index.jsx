@@ -52,12 +52,12 @@ const VoteButtons = (props) => {
 
   return (
     <ButtonsContainer>
-    <Likes onClick={() => handleVote(gameIndex, gamesState, setGames, 'likes')}>
-      <img src={like} alt="like-icon"/>
-    </Likes>
-    <Dislikes onClick={() => handleVote(gameIndex, gamesState, setGames, 'dislikes')}>
-      <img src={dislike} alt="dislike-icon" />
-    </Dislikes>
+      <Likes onClick={() => handleVote(gameIndex, gamesState, setGames, 'likes')}>
+        <img src={like} alt="like-icon"/>
+      </Likes>
+      <Dislikes onClick={() => handleVote(gameIndex, gamesState, setGames, 'dislikes')}>
+        <img src={dislike} alt="dislike-icon" />
+      </Dislikes>
     </ButtonsContainer>
   )
 };

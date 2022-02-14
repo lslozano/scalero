@@ -11,13 +11,21 @@ import Footer from './components/Footer';
 import useLocalStorage from './Hooks/useLocalStorage';
 // Default Data
 import { gamesData } from './gamesData';
+// Styles
+import { breakPoints } from './breakPoints';
 
-const MainContainer = styled.div`
+const MainContainer = styled.div.attrs({
+  className: 'mainContainer',
+})`
   background-color: #f4fafa;
   display: flex;
   flex-direction: column;
   min-height: 100%;
   padding: 0 10px;
+
+  ${breakPoints.smallTablet} {
+    padding: 0 50px;
+  }
 `;
 
 const App = () => {

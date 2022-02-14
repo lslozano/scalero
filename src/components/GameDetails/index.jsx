@@ -2,7 +2,8 @@ import React from 'react';
 // Styles
 import {
   GameDetailsContainer, DetailsContainer, DetailsHeader, Title,
-  Year, DetailsBody, Description, MetricsContainer, Rating
+  Year, DetailsBody, Description, MetricsContainer, Rating,
+  Likes, Dislikes,
 } from './styles';
 
 const GameDetails = (props) => {
@@ -20,8 +21,8 @@ const GameDetails = (props) => {
       </DetailsContainer>
       <MetricsContainer>
         <Rating>Rating: {rating}</Rating>
-        <p>Likes: {likes}</p>
-        <p>Dislikes: {dislikes}</p>
+        <Likes>Likes: {likes}</Likes>
+        <Dislikes>Dislikes: {dislikes}</Dislikes>
       </MetricsContainer>
     </GameDetailsContainer>
   )

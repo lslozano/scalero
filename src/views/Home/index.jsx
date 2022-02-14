@@ -2,10 +2,20 @@ import React from 'react'
 import styled from 'styled-components';
 // Components
 import GameCard from '../../components/GameCard';
+// Styles
+import { breakPoints } from '../../breakPoints';
 
 const GamesContainer = styled.div`
-  padding: 0 25px;
-  margin-block-end: 25px;
+  margin: 25px 0;
+
+  div:first-child {
+    margin-block-start: 0;
+  }
+
+  ${breakPoints.smallTablet} {
+    margin: 25px auto;
+    max-width: 700px;
+  }
 `;
 
 const Home = (props) => {

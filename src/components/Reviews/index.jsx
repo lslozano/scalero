@@ -9,9 +9,9 @@ const Reviews = (props) => {
 
   return (
     <>
-      {reviews.map(review => {
+      {reviews.map((review, index) => {
         return (
-          <ReviewContainer>
+          <ReviewContainer key={index}>
             <p>{review}</p>
           </ReviewContainer>
         )

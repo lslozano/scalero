@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakPoints } from '../../breakPoints';
 
 export const GameDetailsContainer = styled.div`
 `;
@@ -22,7 +23,11 @@ export const Title = styled.p`
   font-weight: 700;
 `;
 
-export const Year = styled.p``;
+export const Year = styled.p`
+  ${breakPoints.largeTablet} {
+    font-size: 1.2rem;
+  }
+`;
 
 export const DetailsBody = styled.div`
   margin-block-end: 15px;
@@ -30,6 +35,14 @@ export const DetailsBody = styled.div`
 
 export const Description = styled.p`
   line-height: 1.5;
+
+  ${breakPoints.smallTablet} {
+    font-size: 1.1rem;
+  }
+
+  ${breakPoints.largeTablet} {
+    font-size: 1.3rem;
+  }
 `;
 
 export const MetricsContainer = styled.div`
@@ -39,4 +52,32 @@ export const MetricsContainer = styled.div`
   margin: 10px 0;
 `;
 
-export const Rating = styled.p``;
+export const Rating = styled.p`
+  ${breakPoints.smallTablet} {
+    font-size: 1.1rem;
+  }
+
+  ${breakPoints.largeTablet} {
+    font-size: 1.3rem;
+  }
+`;
+
+export const Likes = styled.p`
+  ${breakPoints.smallTablet} {
+    font-size: 1.1rem;
+  }
+
+  ${breakPoints.largeTablet} {
+    font-size: 1.3rem;
+  }
+`;
+
+export const Dislikes = styled.p`
+  ${breakPoints.smallTablet} {
+    font-size: 1.1rem;
+  }
+
+  ${breakPoints.largeTablet} {
+    font-size: 1.3rem;
+  }
+`;

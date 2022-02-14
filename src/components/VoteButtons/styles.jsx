@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { breakPoints } from '../../breakPoints';
 
 export const ButtonsContainer = styled.div.attrs(
   { className: 'likeDislikeButtons' }
@@ -6,6 +7,10 @@ export const ButtonsContainer = styled.div.attrs(
   width: 80px;
   display: flex;
   justify-content: space-between;
+
+  ${breakPoints.largeTablet} {
+    width: 100px;
+  }
 `;
 
 export const Voted = styled.p`
@@ -27,6 +32,16 @@ export const Likes = styled.button`
   img {
     filter: invert(100%);
   }
+
+  ${breakPoints.smallTablet} {
+    width: 35px;
+    height: 35px;
+  }
+
+  ${breakPoints.largeTablet} {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const Dislikes = styled.button`
@@ -43,5 +58,15 @@ export const Dislikes = styled.button`
 
   img {
     filter: invert(100%);
+  }
+
+  ${breakPoints.smallTablet} {
+    width: 35px;
+    height: 35px;
+  }
+
+  ${breakPoints.largeTablet} {
+    width: 40px;
+    height: 40px;
   }
 `;
