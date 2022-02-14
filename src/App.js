@@ -30,7 +30,7 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home gamesState={games} setGames={setGames} />} />
-            <Route path="/:game" element={<Game gamesState={games}/>} />
+            <Route path="/:game" element={<Game gamesState={games} setGames={setGames} />} />
           </Routes>
           <Footer />
         </Router>

@@ -26,8 +26,14 @@ const VoteButtons = (props) => {
   const handleVote = (gameKey, gamesState, setGames, vote) => {
     const games = [...gamesState];
 
+    let rating;
     const { likes, dislikes } = games[gameKey];
-    const rating = calculateRating(likes, dislikes);
+
+    if (vote === 'likes') {
+      rating = calculateRating(likes + 1, dislikes);
+    } else {
+      rating = calculateRating(likes, dislikes + 1);
+    }
 
     const game = {
       ...games[gameKey],
