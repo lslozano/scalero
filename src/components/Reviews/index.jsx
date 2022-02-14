@@ -1,14 +1,22 @@
 import React from 'react'
+// Styles
+import { ReviewContainer } from './styles';
 
 const Reviews = (props) => {
   const { reviews } = props;
 
-  if (reviews[0] === '') return <p>There are no reviews yet!</p>
+  if (reviews[0] === '') return <ReviewContainer><p>There are no reviews yet!</p></ReviewContainer>
 
   return (
-    <div>
-      {reviews.map(review => <p>{review}</p>)}
-    </div>
+    <>
+      {reviews.map(review => {
+        return (
+          <ReviewContainer>
+            <p>{review}</p>
+          </ReviewContainer>
+        )
+      })}
+    </>
   )
 }
 
