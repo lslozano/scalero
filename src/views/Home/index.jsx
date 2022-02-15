@@ -3,18 +3,29 @@ import { ThemeProvider } from 'styled-components';
 // Components
 import GameCard from '../../components/GameCard';
 // Styles
-import { GamesContainer } from './styles';
+import { GamesContainer, ViewButton } from './styles';
 // Utility
 // Functionality
 import getThemeForHomeViewOn from './homeThemes';
 
 const Home = (props) => {
   const { gamesState, setGames } = props;
-  const [homeViewSelected, setHomeViewSelected] = useState('column');
+  const VIEWS = {
+    column: 'column',
+    grid: 'grid',
+  };
+  const { column, grid } = VIEWS;
+  const [homeViewSelected, setHomeViewSelected] = useState(column);
+
+  const changeHomeView = (homeView) => {
+    if (homeView === column) return setHomeViewSelected(grid);
+
+    return setHomeViewSelected(column);
+  }
 
   return (
     <ThemeProvider theme={getThemeForHomeViewOn(homeViewSelected)}>
-      <button onClick={() => setHomeViewSelected('grid')}>Change view</button>
+      <ViewButton onClick={() => changeHomeView(homeViewSelected)}>Change view</ViewButton>
       <GamesContainer>
         {gamesState.map((game, index) => {
           const { name, description, voted, year, rating } = game;
