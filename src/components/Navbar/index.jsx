@@ -20,10 +20,12 @@ const Navbar = () => {
     const { name } = game;
     const gameUrl = name.replace(/ /g, '-');
     return (
-      <GameOption key={index} onClick={() => setMenuOpen(false)}>
-        <Link to={`/${gameUrl}`}>{game.name}</Link>
-      </GameOption>
-    )
+      <Link key={index} onClick={() => setMenuOpen(false)} to={`/${gameUrl}`}>
+        <GameOption>
+          {game.name}
+        </GameOption>
+      </Link>
+    );
   };
 
   return (

@@ -69,6 +69,11 @@ export const GamesOptions = styled.div`
   right: 0;
   top: 60px;
   z-index: 1;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  };
 `;
 
 export const GameOption = styled.div`
@@ -78,11 +83,6 @@ export const GameOption = styled.div`
   text-align: center;
   background-color: #006ac9;
   cursor: pointer;
-
-  a {
-    color: #fff;
-    text-decoration: none;
-  };
 
   :hover {
     background-image: linear-gradient(to right, #9b247f, #0076c3);
