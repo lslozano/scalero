@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import styled from 'styled-components';
+// Views
+import Home from './views/Home';
+import Game from './views/Game';
+// Components
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+// Hook
+import useLocalStorage from './Hooks/useLocalStorage';
+// Default Data
+import { gamesData } from './gamesData';
+// Styles
+import { breakPoints } from './breakPoints';
 
-function App() {
+const MainContainer = styled.div.attrs({
+  className: 'mainContainer',
+})`
+  background-color: #f4fafa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 0 10px;
+
+  ${breakPoints.smallTablet} {
+    padding: 0 50px;
+  }
+`;
+
+const App = () => {
+  // Custom hook that sets global persistent state
+  const [games, setGames] = useLocalStorage('gamesData', gamesData);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContainer>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home gamesState={games} setGames={setGames} />} />
+            <Route path="/:game" element={<Game gamesState={games} setGames={setGames} />} />
+          </Routes>
+          <Footer />
+        </Router>
+    </MainContainer>
   );
 }
 
