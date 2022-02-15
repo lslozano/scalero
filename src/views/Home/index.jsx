@@ -5,7 +5,6 @@ import GameCard from '../../components/GameCard';
 // Styles
 import { GamesContainer, ViewButton } from './styles';
 // Utility
-// Functionality
 import getThemeForHomeViewOn from './homeThemes';
 
 const Home = (props) => {
