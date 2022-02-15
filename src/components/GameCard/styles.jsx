@@ -1,17 +1,24 @@
 import styled from 'styled-components';
 import { breakPoints} from '../../breakPoints';
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.div.attrs({
+  className: 'cardContainer',
+})`
   border: 2px solid #0076c3;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin-block-start: 25px;
   padding: 15px;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 
   :hover {
     box-shadow: 10px 10px 5px #9b247f;
+  }
+
+  ${breakPoints.largeTablet} {
+    width: ${props => props.theme.width.gameCard};
   }
 `;
 
@@ -25,7 +32,7 @@ export const Title = styled.p`
 `;
 
 export const Year = styled.p`
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     font-size: 1.2rem;
   }
 `;
@@ -41,7 +48,7 @@ export const Description = styled.p`
     font-size: 1.1rem;
   }
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     font-size: 1.3rem;
   }
 `;
@@ -59,7 +66,7 @@ export const Rating = styled.p`
     font-size: 1.1rem;
   }
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     font-size: 1.3rem;
   }
 `;
@@ -77,7 +84,7 @@ export const ButtonDetail = styled.div`
     text-decoration: none;
   };
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     a {
       font-size: 1.2rem;
     }

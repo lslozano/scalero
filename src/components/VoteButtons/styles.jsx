@@ -8,7 +8,7 @@ export const ButtonsContainer = styled.div.attrs(
   display: flex;
   justify-content: space-between;
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     width: 100px;
   }
 `;
@@ -38,7 +38,7 @@ export const Likes = styled.button`
     height: 35px;
   }
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     width: 40px;
     height: 40px;
   }
@@ -65,7 +65,7 @@ export const Dislikes = styled.button`
     height: 35px;
   }
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     width: 40px;
     height: 40px;
   }

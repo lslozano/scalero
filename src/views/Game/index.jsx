@@ -26,7 +26,7 @@ const DetailsMainContainer = styled.div`
     align-self: center;
   }
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     margin: 0 auto;
     width: 700px;
   }
@@ -42,7 +42,7 @@ const FormButton = styled.div`
   color: #fff;
   margin: 25px 0;
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     font-size: 1.2rem;
   }
 `;

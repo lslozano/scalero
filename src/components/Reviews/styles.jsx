@@ -18,7 +18,7 @@ export const ReviewContainer = styled.div`
     }
   }
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     p {
       font-size: 1.5rem;
     }

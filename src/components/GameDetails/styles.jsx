@@ -24,7 +24,7 @@ export const Title = styled.p`
 `;
 
 export const Year = styled.p`
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     font-size: 1.2rem;
   }
 `;
@@ -40,7 +40,7 @@ export const Description = styled.p`
     font-size: 1.1rem;
   }
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     font-size: 1.3rem;
   }
 `;
@@ -57,7 +57,7 @@ export const Rating = styled.p`
     font-size: 1.1rem;
   }
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     font-size: 1.3rem;
   }
 `;
@@ -67,7 +67,7 @@ export const Likes = styled.p`
     font-size: 1.1rem;
   }
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     font-size: 1.3rem;
   }
 `;
@@ -77,7 +77,7 @@ export const Dislikes = styled.p`
     font-size: 1.1rem;
   }
 
-  ${breakPoints.largeTablet} {
+  ${breakPoints.xLargeTablet} {
     font-size: 1.3rem;
   }
 `;
